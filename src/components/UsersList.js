@@ -19,16 +19,8 @@ function UsersList() {
         setIsLoadingUsers(true);
         dispatch(fetchUsers())
             .unwrap()
-            .then(() => {
-                setIsLoadingUsers(false);
-            })
-            .catch((err) => {  
-                setLoadingUsersError(err);
-                setIsLoadingUsers(false);
-            })
-            .finally(() => {
-                setIsLoadingUsers(false);
-            });
+            .catch((err) => setLoadingUsersError(err))
+            .finally(() => setIsLoadingUsers(false));
     }, [dispatch]);
     
     const handleUserAdd = () => {
