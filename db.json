@@ -1,6 +1,8 @@
 {
     "users": [
-        {"id": 1, "name": "Camilo"}
+        {"id": 1, "name": "Camilo"},
+        {"id": 2, "name": "Valentina"},
+        {"id": 3, "name": "Gatiosito"}
     ],
     "albums": [],
     "photos": []
