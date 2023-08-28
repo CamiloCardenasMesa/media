@@ -3,8 +3,19 @@ import axios from "axios";
 
 const fetchUsers = createAsyncThunk('users/fetch', async () => {
     const response = await axios.get('http://localhost:3005/users'); //making the request. 
+    
+    //only dev
+    await pause(2000);
+    
     return response.data; // resoponse.data === [{id: 1, name: 'Camilo'}] 
 }); 
+
+//dev only
+const pause = (duration) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, duration);
+    });
+};
 
 /**
  * when create "const fetchUsers" automatically added:
